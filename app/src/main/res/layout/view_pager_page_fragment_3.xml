@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/planet_3"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/planet_32" />
+
+    <ImageView
+        android:id="@+id/planet_31"
+
+        android:layout_width="@dimen/small_planet_size"
+        android:layout_height="@dimen/small_planet_size"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/planet_30"
+        app:layout_constraintBottom_toBottomOf="@+id/planet_3"
+        app:layout_constraintEnd_toEndOf="@+id/planet_3" />
+
+    <ImageView
+        android:id="@+id/planet_32"
+
+        android:layout_width="@dimen/small_planet_size"
+        android:layout_height="@dimen/small_planet_size"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/planet_30"
+        app:layout_constraintBottom_toBottomOf="@+id/planet_3"
+        app:layout_constraintEnd_toEndOf="@+id/planet_3"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bkgd_6_small" />
+
+
+</android.support.constraint.ConstraintLayout>
