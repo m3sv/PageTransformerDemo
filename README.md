@@ -1,1 +1,3 @@
 # PageTransformerDemo
+ 
+ License: MIT
