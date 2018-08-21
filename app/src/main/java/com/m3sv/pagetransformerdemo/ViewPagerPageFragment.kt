@@ -1,5 +1,6 @@
 package com.m3sv.pagetransformerdemo
 
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -33,11 +34,13 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
             3 -> inflater.inflate(R.layout.view_pager_page_fragment_3, container, false)
             4 -> inflater.inflate(R.layout.view_pager_page_fragment_4, container, false)
             else -> throw IllegalArgumentException("Page number is out of range, should be from 0 to 4")
-        }.also { it.tag = arguments?.getInt(PAGE_NUM_KEY) }
+        }.also { it.tag = currentPosition }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (parentFragment as ViewDelegate).addListener(currentPosition, this)
         when (currentPosition) {
             0 -> {
                 imageView = view.findViewById(R.id.planet_0)
@@ -55,7 +58,8 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
                 imageView = view.findViewById(R.id.planet_2)
                 supportImageView = view.findViewById(R.id.planet_21)
                 supportImageView2 = view.findViewById(R.id.planet_22)
-
+                supportImageView.setColorFilter(resources.getColor(R.color.light_goldenrod), PorterDuff.Mode.MULTIPLY)
+                supportImageView2.setColorFilter(resources.getColor(R.color.yellow), PorterDuff.Mode.MULTIPLY)
             }
             3 -> {
                 imageView = view.findViewById(R.id.planet_3)

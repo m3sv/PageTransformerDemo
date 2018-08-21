@@ -9,9 +9,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
 
-        savedInstanceState?.let {  } ?: supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.container, ViewPagerFragment())
-            .commit()
+        if (savedInstanceState == null)
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, ViewPagerFragment())
+                .commit()
     }
 }
