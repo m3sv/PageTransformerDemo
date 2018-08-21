@@ -52,7 +52,6 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
                 imageView = view.findViewById(R.id.planet_1)
                 supportImageView = view.findViewById(R.id.planet_11)
                 supportImageView2 = view.findViewById(R.id.planet_12)
-
             }
             2 -> {
                 imageView = view.findViewById(R.id.planet_2)
