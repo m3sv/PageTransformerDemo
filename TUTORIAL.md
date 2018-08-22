@@ -2,7 +2,7 @@
 
 ## Create MainActivity and inflate fragment with ViewPager
 
-```
+```Kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -17,7 +17,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 ## Define ViewDelegate and ViewElement
 
-```
+```Kotlin
 interface ViewDelegate {
     fun onScroll(position: Float, tag: Int?)
 
@@ -25,7 +25,7 @@ interface ViewDelegate {
 }
 ```
 
-```
+```Kotlin
 interface ViewElement {
     fun onScroll(position: Float)
 }
@@ -35,7 +35,7 @@ ViewDelegate(fragment containing ViewPager) will be used as a link between ViewE
 
 ## Create ViewPagerDeletationFragment that will abstract away ViewDelegate details, we will make it abstract so that client won't be able to instantiate it by mistake
 
-```
+```Kotlin
 abstract class ViewPagerDelegationFragment : Fragment(), ViewDelegate {
 
     private val listeners: MutableMap<Int, WeakReference<ViewElement>> = mutableMapOf()
@@ -52,22 +52,22 @@ abstract class ViewPagerDelegationFragment : Fragment(), ViewDelegate {
 
 ## Create ViewPagerFragment that will inherit from ViewPagerDeletationFragment 
 
-```
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        view.findViewById<ViewPager>(R.id.view_pager).also {
-            it.offscreenPageLimit = NUM_PAGES - 1
-            it.adapter = PagerAdapter(childFragmentManager)
-            it.setPageTransformer(true, ViewPagerTransformer(this))
-        }
+```Kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    view.findViewById<ViewPager>(R.id.view_pager).also {
+        it.offscreenPageLimit = NUM_PAGES - 1
+        it.adapter = PagerAdapter(childFragmentManager)
+        it.setPageTransformer(true, ViewPagerTransformer(this))
     }
+}
 ```
 
 We set our PageTransformer, which we will define later, in onViewCreated and give it our ViewPagerDelegationFragment as a parameter.
 
 ## Create custom ViewPagerTransformer and extend ViewPager.PageTransformer
 
-```
+```Kotlin
 class ViewPagerTransformer(viewDelegate: ViewDelegate) : ViewPager.PageTransformer,
     ViewDelegate by viewDelegate {
     override fun transformPage(view: View, position: Float) {
