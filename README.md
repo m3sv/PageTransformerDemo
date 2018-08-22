@@ -2,7 +2,7 @@
 
 The repository showcases implementation of [ViewPager.PageTransformer](https://developer.android.com/reference/android/support/v4/view/ViewPager.PageTransformer) with multiple fragments.
 
-Detailed instructions on how to implement this can be found [here](link to tutorial.md).
+Detailed instructions on how to implement this can be found [here](https://github.com/m3sv/PageTransformerDemo/blob/master/TUTORIAL.md).
 
 ![gif](https://raw.githubusercontent.com/m3sv/PageTransformerDemo/master/demo.gif)
 
