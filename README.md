@@ -10,6 +10,8 @@ The repository showcases implementation of [ViewPager.PageTransformer](https://d
 
 [Planets](https://opengameart.org/content/16-planet-sprites)
 
+# Acknowledgments
+
 Thanks Michell Bak for inspiration and implementation idea, his tutorial can be found 
 [here](https://android.jlelse.eu/creating-an-intro-screen-for-your-app-using-viewpager-pagetransformer-9950517ea04f).
 
