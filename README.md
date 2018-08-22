@@ -1,6 +1,6 @@
 # Android PageTransformer demo
 
-The repository showcases implementation of [ViewPager.PageTransformer](https://developer.android.com/reference/android/support/v4/view/ViewPager.PageTransformer) with multiple fragments.
+The repository showcases implementation of [ViewPager.PageTransformer](https://developer.android.com/reference/android/support/v4/view/ViewPager.PageTransformer) with multiple fragments. It allows to move/transform fragment views based on the position of the page on the screen.
 
 Detailed instructions on how to implement this can be found [here](https://github.com/m3sv/PageTransformerDemo/blob/master/TUTORIAL.md).
 
