@@ -88,6 +88,11 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
         }
     }
 
+    override fun onDestroyView() {
+        (parentFragment as ViewDelegate).removeListener(currentPosition)
+        super.onDestroyView()
+    }
+
     companion object {
         private const val PAGE_NUM_KEY = "page_number"
 
