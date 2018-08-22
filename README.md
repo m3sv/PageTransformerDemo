@@ -4,4 +4,11 @@ The repository showcases implementation of [ViewPager.PageTransformer](https://d
 
 ![gif](https://raw.githubusercontent.com/m3sv/PageTransformerDemo/master/demo.gif)
 
+# Links to resources: 
+
+[Space background](https://opengameart.org/content/parallax-space-scene-seamlessly-scrolls-too)
+
+[Planets](https://opengameart.org/content/16-planet-sprites)
+
+
 License: MIT
