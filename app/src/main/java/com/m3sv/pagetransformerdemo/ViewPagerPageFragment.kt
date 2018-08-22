@@ -14,11 +14,11 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
 
     var currentPosition: Int? = null
 
-    lateinit var imageView: ImageView
+    lateinit var mainPlanet: ImageView
 
-    lateinit var supportImageView: ImageView
+    lateinit var supportPlanet1: ImageView
 
-    lateinit var supportImageView2: ImageView
+    lateinit var supportPlanet2: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,31 +44,31 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
         (parentFragment as ViewDelegate).addListener(currentPosition, this)
         when (currentPosition) {
             0 -> {
-                imageView = view.findViewById(R.id.planet_0)
-                supportImageView = view.findViewById(R.id.planet_01)
-                supportImageView2 = view.findViewById(R.id.planet_02)
+                mainPlanet = view.findViewById(R.id.planet_0)
+                supportPlanet1 = view.findViewById(R.id.planet_01)
+                supportPlanet2 = view.findViewById(R.id.planet_02)
             }
             1 -> {
-                imageView = view.findViewById(R.id.planet_1)
-                supportImageView = view.findViewById(R.id.planet_11)
-                supportImageView2 = view.findViewById(R.id.planet_12)
+                mainPlanet = view.findViewById(R.id.planet_1)
+                supportPlanet1 = view.findViewById(R.id.planet_11)
+                supportPlanet2 = view.findViewById(R.id.planet_12)
             }
             2 -> {
-                imageView = view.findViewById(R.id.planet_2)
-                supportImageView = view.findViewById(R.id.planet_21)
-                supportImageView2 = view.findViewById(R.id.planet_22)
-                supportImageView.setColorFilter(resources.getColor(R.color.light_goldenrod), PorterDuff.Mode.MULTIPLY)
-                supportImageView2.setColorFilter(resources.getColor(R.color.yellow), PorterDuff.Mode.MULTIPLY)
+                mainPlanet = view.findViewById(R.id.planet_2)
+                supportPlanet1 = view.findViewById(R.id.planet_21)
+                supportPlanet2 = view.findViewById(R.id.planet_22)
+                supportPlanet1.setColorFilter(resources.getColor(R.color.light_goldenrod), PorterDuff.Mode.MULTIPLY)
+                supportPlanet2.setColorFilter(resources.getColor(R.color.yellow), PorterDuff.Mode.MULTIPLY)
             }
             3 -> {
-                imageView = view.findViewById(R.id.planet_3)
-                supportImageView = view.findViewById(R.id.planet_31)
-                supportImageView2 = view.findViewById(R.id.planet_32)
+                mainPlanet = view.findViewById(R.id.planet_3)
+                supportPlanet1 = view.findViewById(R.id.planet_31)
+                supportPlanet2 = view.findViewById(R.id.planet_32)
             }
             4 -> {
-                imageView = view.findViewById(R.id.planet_4)
-                supportImageView = view.findViewById(R.id.planet_41)
-                supportImageView2 = view.findViewById(R.id.planet_42)
+                mainPlanet = view.findViewById(R.id.planet_4)
+                supportPlanet1 = view.findViewById(R.id.planet_41)
+                supportPlanet2 = view.findViewById(R.id.planet_42)
             }
         }
     }
@@ -76,15 +76,15 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
     override fun onScroll(position: Float) {
         Log.d(javaClass.simpleName, "onScrollIsCalled, position: $position")
         if (position in 0.0..1.0) {
-            imageView.translationX = position * imageView.width * 0.2f
-            supportImageView.translationX = position * supportImageView.width * 5f
-            supportImageView2.translationX = position * supportImageView.width * 20f
+            mainPlanet.translationX = position * mainPlanet.width * 0.2f
+            supportPlanet1.translationX = position * supportPlanet1.width * 5f
+            supportPlanet2.translationX = position * supportPlanet1.width * 20f
         }
 
         if (position in -1.0..0.0) {
-            imageView.translationX = position * imageView.width * 0.2f
-            supportImageView.translationX = position * supportImageView.width * 5f
-            supportImageView2.translationX = position * supportImageView.width * 5f
+            mainPlanet.translationX = position * mainPlanet.width * 0.2f
+            supportPlanet1.translationX = position * supportPlanet1.width * 5f
+            supportPlanet2.translationX = position * supportPlanet1.width * 5f
         }
     }
 
