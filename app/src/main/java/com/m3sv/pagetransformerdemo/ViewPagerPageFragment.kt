@@ -34,6 +34,7 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
             3 -> inflater.inflate(R.layout.view_pager_page_fragment_3, container, false)
             4 -> inflater.inflate(R.layout.view_pager_page_fragment_4, container, false)
             else -> throw IllegalArgumentException("Page number is out of range, should be from 0 to 4")
+            // Crucial, add the tag, so that you can recognise your view among others
         }.also { it.tag = currentPosition }
     }
 
@@ -46,7 +47,6 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
                 imageView = view.findViewById(R.id.planet_0)
                 supportImageView = view.findViewById(R.id.planet_01)
                 supportImageView2 = view.findViewById(R.id.planet_02)
-
             }
             1 -> {
                 imageView = view.findViewById(R.id.planet_1)
@@ -64,7 +64,6 @@ class ViewPagerPageFragment : Fragment(), ViewElement {
                 imageView = view.findViewById(R.id.planet_3)
                 supportImageView = view.findViewById(R.id.planet_31)
                 supportImageView2 = view.findViewById(R.id.planet_32)
-
             }
             4 -> {
                 imageView = view.findViewById(R.id.planet_4)
