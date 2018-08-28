@@ -86,6 +86,8 @@ For simplicity, I used one fragment that has different content when created with
 
 The most crucial part is implementing ViewElement interface, setting view tag in onCreateView and adding listener in onViewCreated.
 
+**Don't forget to remove listener in onDestroyView.**
+
 Then you can modify your view position in onScroll.
 
 
